@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar Currículo</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Enviar Currículo</h1>
+        <nav><a href="recrutador.html">Área do Recrutador</a></nav>
+    </header>
+
+    <main>
+        <form id="form-curriculo">
+            <div class="field">
+                <label for="nomeCompleto">Nome Completo</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" required>
+            </div>
+            <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="field">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" name="telefone" required>
+            </div>
+            <div class="field">
+                <label for="area">Área</label>
+                <select id="area" name="area" required>
+                    <option value="">Selecione...</option>
+                    <option value="Backend">Backend</option>
+                    <option value="Frontend">Frontend</option>
+                    <option value="Mobile">Mobile</option>
+                    <option value="DevOps">DevOps</option>
+                    <option value="QA">QA</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="nivel">Nível</label>
+                <select id="nivel" name="nivel" required>
+                    <option value="">Selecione...</option>
+                    <option value="Júnior">Júnior</option>
+                    <option value="Pleno">Pleno</option>
+                    <option value="Sênior">Sênior</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="resumo">Resumo Profissional</label>
+                <textarea id="resumo" name="resumo" rows="4" required></textarea>
+            </div>
+            <button type="submit">Enviar Currículo</button>
+            <div id="feedback"></div>
+        </form>
+    </main>
+
+    <script src="js/candidato.js"></script>
+</body>
+</html>

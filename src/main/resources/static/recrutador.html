@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Recrutador</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Currículos Recebidos</h1>
+        <nav><a href="candidato.html">Área do Candidato</a></nav>
+    </header>
+
+    <main>
+        <section class="filters">
+            <input type="text" id="search-nome" placeholder="Buscar por nome...">
+            <select id="filter-area">
+                <option value="">Todas as áreas</option>
+                <option value="Backend">Backend</option>
+                <option value="Frontend">Frontend</option>
+                <option value="Mobile">Mobile</option>
+                <option value="DevOps">DevOps</option>
+                <option value="QA">QA</option>
+            </select>
+            <select id="filter-nivel">
+                <option value="">Todos os níveis</option>
+                <option value="Júnior">Júnior</option>
+                <option value="Pleno">Pleno</option>
+                <option value="Sênior">Sênior</option>
+            </select>
+            <button id="btn-buscar">Buscar</button>
+        </section>
+
+        <section id="lista-curriculos">
+        </section>
+    </main>
+
+    <script src="js/recrutador.js"></script>
+</body>
+</html>
