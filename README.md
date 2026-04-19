@@ -1,57 +1,100 @@
-# Sistema de Cadastro de Currículos
+# Sistema de Cadastro de Curriculos
 
-Uma aplicação simples onde candidatos enviam currículos por um formulário e recrutadores consultam e filtram as candidaturas recebidas.
+Aplicacao web onde candidatos enviam seus curriculos por um formulario e recrutadores acessam um painel para visualizar e filtrar as candidaturas recebidas. Desenvolvida como teste tecnico para estagio.
 
-## Tecnologias
+## Tecnologias utilizadas
 
-- Java 17 + Spring Boot 3
-- Spring Validation
-- HTML, CSS e JavaScript puro
+- Java 17
+- Spring Boot 3.2
+- Spring Security com autenticacao JWT
+- Spring Data JPA
+- Banco de dados H2 em memoria
+- HTML, CSS e JavaScript puro (sem framework frontend)
 
-## Como executar
+## Como rodar o projeto
 
-Precisa ter o Java 17 instalado.
+Voce precisa ter o Java 17 instalado na maquina.
+
+Clone o repositorio e execute:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-A aplicação sobe em `http://localhost:8080`.
+A aplicacao vai subir em `http://localhost:8081`.
 
-## Páginas
+## Paginas disponiveis
 
-| Página | URL |
+| Pagina | URL |
 |--------|-----|
-| Formulário do candidato | http://localhost:8080/candidato.html |
-| Painel do recrutador | http://localhost:8080/recrutador.html |
+| Inicio | http://localhost:8081/index.html |
+| Formulario do candidato | http://localhost:8081/candidato.html |
+| Login do recrutador | http://localhost:8081/login.html |
+| Painel do recrutador | http://localhost:8081/recrutador.html |
 
-## Endpoints
+O painel do recrutador so pode ser acessado depois de fazer login. Sem o token JWT valido, a requisicao para buscar curriculos e barrada.
 
-**Cadastrar currículo**
+## Credenciais de acesso (recrutador)
+
+```
+usuario: admin
+senha: admin123
+```
+
+## Endpoints da API
+
+**Login**
+```
+POST /auth/login
+```
+```json
+{
+  "username": "admin",
+  "password": "admin123"
+}
+```
+Retorna um token JWT que deve ser enviado nas proximas requisicoes no header `Authorization: Bearer <token>`.
+
+---
+
+**Cadastrar curriculo** (publico, nao precisa de token)
 ```
 POST /curriculos
 ```
 ```json
 {
-  "nomeCompleto": "João Silva",
+  "nomeCompleto": "Joao Silva",
   "email": "joao@email.com",
   "telefone": "11999999999",
   "area": "Backend",
   "nivel": "Junior",
-  "resumo": "Desenvolvedor Java com experiência em APIs REST."
+  "resumo": "Desenvolvedor Java com experiencia em APIs REST."
 }
 ```
-Todos os campos são obrigatórios. Dados inválidos retornam `400` com a lista de erros.
+Todos os campos sao obrigatorios. Se algum estiver faltando ou invalido, a API retorna `400` com a mensagem de erro.
 
-**Listar currículos**
+---
+
+**Listar curriculos** (requer token JWT)
 ```
 GET /curriculos
-GET /curriculos?nome=João
+GET /curriculos?nome=Joao
 GET /curriculos?area=Backend
 GET /curriculos?nivel=Junior
 GET /curriculos?area=Backend&nivel=Junior
 ```
 
-## Observação
+## Console do banco de dados
 
-Os dados ficam em memória. Ao reiniciar a aplicação, todos os currículos são perdidos.
+O H2 tem uma interface web para inspecionar os dados durante o desenvolvimento.
+
+URL: `http://localhost:8081/h2-console`
+
+Configuracoes de conexao:
+- JDBC URL: `jdbc:h2:mem:curriculos`
+- Usuario: `sa`
+- Senha: (deixar em branco)
+
+## Observacao importante
+
+Os dados ficam armazenados em memoria. Toda vez que a aplicacao for reiniciada, os curriculos cadastrados sao perdidos.
