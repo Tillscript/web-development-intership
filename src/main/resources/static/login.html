@@ -3,32 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login do Recrutador</title>
+    <title>Login · Recrutador</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header>
-        <h1>Área do Recrutador</h1>
-        <nav><a href="candidato.html">Área do Candidato</a></nav>
+<body class="login-page">
+    <header class="login-header">
+        <h1><a class="brand" href="index.html">Sistema de Currículos</a></h1>
     </header>
 
     <main>
         <form id="form-login">
+            <div class="login-heading">
+                <p class="form-title">Acesso Restrito</p>
+                <p class="form-sub">Acesso do recrutador</p>
+            </div>
             <div class="field">
                 <label for="username">Usuário</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required autocomplete="username">
             </div>
             <div class="field">
                 <label for="password">Senha</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required autocomplete="current-password">
             </div>
             <button type="submit">Entrar</button>
             <div id="feedback"></div>
+            <a href="index.html" class="login-back">← Voltar ao início</a>
         </form>
     </main>
 
     <footer>
-        <small>Sistema de submissão de currículos do Teste estágio C&M</small>
+        <small>Teste estágio C&amp;M · Sistema de gestão de candidatos</small>
     </footer>
 
     <script src="js/login.js"></script>
