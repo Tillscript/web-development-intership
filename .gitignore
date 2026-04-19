@@ -1,0 +1,18 @@
+# build
+target/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# env / egredos
+.env
+.env.*
+application-local.properties
+application-dev.properties
+
+# substituiçõesa Locais
+*.log
