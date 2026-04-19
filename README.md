@@ -21,16 +21,16 @@ Clone o repositorio e execute:
 ./mvnw spring-boot:run
 ```
 
-A aplicacao vai subir em `http://localhost:8081`.
+A aplicacao vai subir em `http://localhost:8080`.
 
 ## Paginas disponiveis
 
 | Pagina | URL |
 |--------|-----|
 | Inicio | http://localhost:8081/index.html |
-| Formulario do candidato | http://localhost:8081/candidato.html |
-| Login do recrutador | http://localhost:8081/login.html |
-| Painel do recrutador | http://localhost:8081/recrutador.html |
+| Formulario do candidato | http://localhost:8080/candidato.html |
+| Login do recrutador | http://localhost:8080/login.html |
+| Painel do recrutador | http://localhost:8080/recrutador.html |
 
 O painel do recrutador so pode ser acessado depois de fazer login. Sem o token JWT valido, a requisicao para buscar curriculos e barrada.
 
