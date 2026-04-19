@@ -27,6 +27,8 @@ function renderCurriculos(curriculos) {
 
 async function buscar() {
     lista.innerHTML = '<p class="empty">Carregando...</p>';
+    btnBuscar.disabled = true;
+    btnBuscar.textContent = 'Buscando...';
 
     const params = new URLSearchParams();
     if (inputNome.value.trim())   params.append('nome',  inputNome.value.trim());
@@ -48,6 +50,9 @@ async function buscar() {
         renderCurriculos(data);
     } catch {
         lista.innerHTML = '<p class="empty error">Erro ao carregar currículos.</p>';
+    } finally {
+        btnBuscar.disabled = false;
+        btnBuscar.textContent = 'Buscar';
     }
 }
 

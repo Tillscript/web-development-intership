@@ -86,6 +86,10 @@ button:hover {
     gap: 0.8rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
+    background: white;
+    padding: 1rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
 }
 
 .filters input,
@@ -117,4 +121,31 @@ button:hover {
     text-align: center;
     color: #999;
     padding: 3rem 0;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+    color: #aaa;
+    font-size: 0.78rem;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+header button {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #ecf0f1;
+    padding: 0.3rem 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+header button:hover {
+    background: rgba(255,255,255,0.1);
 }

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Currículos</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .home-cards {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .home-card {
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            padding: 2rem;
+            width: 280px;
+            text-align: center;
+        }
+
+        .home-card h2 {
+            margin-bottom: 0.6rem;
+            font-size: 1.2rem;
+        }
+
+        .home-card p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1.4rem;
+        }
+
+        .home-card a {
+            display: inline-block;
+            background: #2c3e50;
+            color: white;
+            text-decoration: none;
+            padding: 0.6rem 1.4rem;
+            border-radius: 4px;
+            font-size: 0.95rem;
+        }
+
+        .home-card a:hover {
+            background: #1a252f;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Currículos</h1>
+    </header>
+
+    <main>
+        <div class="home-cards">
+            <div class="home-card">
+                <h2>Sou Candidato</h2>
+                <p>Preencha seus dados e envie seu currículo para as vagas disponíveis.</p>
+                <a href="candidato.html">Enviar Currículo</a>
+            </div>
+            <div class="home-card">
+                <h2>Sou Recrutador</h2>
+                <p>Acesse a área restrita para visualizar e filtrar os currículos recebidos.</p>
+                <a href="login.html">Fazer Login</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <small>Sistema de submissão de currículos do Teste estágio C&M</small>
+    </footer>
+</body>
+</html>

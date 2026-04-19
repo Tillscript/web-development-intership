@@ -6,6 +6,7 @@ form.addEventListener('submit', async (e) => {
 
     const btn = form.querySelector('button');
     btn.disabled = true;
+    btn.textContent = 'Entrando...';
     feedback.textContent = '';
 
     const body = {
@@ -33,5 +34,6 @@ form.addEventListener('submit', async (e) => {
         feedback.className = 'error';
     } finally {
         btn.disabled = false;
+        btn.textContent = 'Entrar';
     }
 });

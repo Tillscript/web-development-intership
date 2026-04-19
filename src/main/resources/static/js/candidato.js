@@ -16,6 +16,7 @@ form.addEventListener('submit', async (e) => {
 
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
+    btn.textContent = 'Enviando...';
 
     try {
         const res = await fetch('/curriculos', {
@@ -39,5 +40,6 @@ form.addEventListener('submit', async (e) => {
         feedback.className = 'error';
     } finally {
         btn.disabled = false;
+        btn.textContent = 'Enviar Currículo';
     }
 });
