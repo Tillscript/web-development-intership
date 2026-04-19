@@ -88,7 +88,7 @@ GET /curriculos?area=Backend&nivel=Junior
 
 O H2 tem uma interface web para inspecionar os dados durante o desenvolvimento.
 
-URL: `http://localhost:8081/h2-console`
+URL: `http://localhost:8080/h2-console`
 
 Configuracoes de conexao:
 - JDBC URL: `jdbc:h2:mem:curriculos`
