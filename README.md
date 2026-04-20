@@ -8,24 +8,12 @@ Aplicacao web onde candidatos enviam seus curriculos por um formulario e recruta
 - Spring Boot 3.2
 - Spring Security com autenticacao JWT
 - Spring Data JPA
-- PostgreSQL
+- H2 (banco em memoria, sem instalacao necessaria)
 - HTML, CSS e JavaScript puro (sem framework frontend)
 
 ## Como rodar o projeto
 
-Voce precisa ter o Java 17 e o PostgreSQL instalados na maquina.
-
-Crie o banco de dados antes de subir a aplicacao:
-
-```sql
-CREATE DATABASE curriculos;
-```
-
-As configuracoes de conexao ficam em `src/main/resources/application.properties`. Por padrao:
-- Host: `localhost:5432`
-- Banco: `curriculos`
-- Usuario: `postgres`
-- Senha: `admin123`
+Voce precisa ter apenas o **Java 17** e o **Maven** instalados.
 
 Clone o repositorio e execute:
 
@@ -33,7 +21,7 @@ Clone o repositorio e execute:
 ./mvnw spring-boot:run
 ```
 
-A aplicacao vai subir em `http://localhost:8080`.
+A aplicacao vai subir em `http://localhost:8080`. Nenhuma configuracao de banco necessaria.
 
 ## Paginas disponiveis
 
@@ -98,14 +86,15 @@ GET /curriculos?area=Backend&nivel=Junior
 
 ## Banco de dados
 
-O projeto usa PostgreSQL. Os dados sao persistidos mesmo apos reiniciar a aplicacao.
+O projeto usa H2, um banco em memoria embutido no Spring Boot. Nao precisa instalar nada.
 
-Para inspecionar os dados, conecte direto no banco via qualquer cliente SQL (psql, DBeaver, etc.):
+Os dados sao perdidos ao reiniciar a aplicacao (comportamento normal para banco em memoria).
+
+Para inspecionar os dados enquanto a aplicacao esta rodando, acesse o console H2:
 
 ```
-Host: localhost
-Porta: 5432
-Banco: curriculos
-Usuario: postgres
-Senha: admin123
+URL: http://localhost:8080/h2-console
+JDBC URL: jdbc:h2:mem:curriculos
+Usuario: sa
+Senha: (deixar em branco)
 ```
