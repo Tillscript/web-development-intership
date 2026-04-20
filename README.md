@@ -18,7 +18,7 @@ Voce precisa ter apenas o **Java 17** e o **Maven** instalados.
 Clone o repositorio e execute:
 
 ```bash
-./mvnw spring-boot:run
+mvn spring-boot:run
 ```
 
 A aplicacao vai subir em `http://localhost:8080`. Nenhuma configuracao de banco necessaria.
